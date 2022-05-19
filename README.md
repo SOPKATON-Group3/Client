@@ -86,6 +86,7 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 
 ## commit message 컨벤션
 - 커밋 컨벤션은 대표적인거만 지키좌!!
+
 ![스크린샷 2022-03-31 오전 5 02 34](https://user-images.githubusercontent.com/89568030/169188859-74a48236-949e-483b-8ddb-c3cfb3ce44ec.png)
 
 
@@ -104,7 +105,8 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 
 ```
 .
-├── mock-data 🗂 목 데이터 저장
+├── data.json 🗂 목 데이터 저장
+├── apis 🗂 api 폴더
 ├── package.json 📦 설치된 패키지를 관리하는 파일
 └── src
     ├── App.jsx ✡️ 앱의 라우팅과 글로벌 스타일 지정
@@ -114,8 +116,8 @@ export한 친구의 이름 바꿔서 쓰지 말기!
     │   │   ├── Footer
     │   │   ├── Header
     │   │   └── assets
-    │   ├── home 🗂 main 페이지에 쓰일 컴포넌트 저장
-    │   └── myPage 🗂 question 페이지에 쓰일 컴포넌트 저장
+    │   ├── home 🗂 home 페이지에 쓰일 컴포넌트 저장
+    │   └── myPage 🗂 myPage 페이지에 쓰일 컴포넌트 저장
     ├── pages 🗂 라우팅 시 보여질 페이지 컴포넌트 저장
     │   ├── home
     │   └── myPage
@@ -124,3 +126,5 @@ export한 친구의 이름 바꿔서 쓰지 말기!
         ├── GlobalStyle.js
         └── color.js
 ```
+
+
