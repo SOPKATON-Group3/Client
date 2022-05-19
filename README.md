@@ -87,13 +87,10 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 ![스크린샷 2022-03-31 오전 5 02 34](https://user-images.githubusercontent.com/89568030/169188859-74a48236-949e-483b-8ddb-c3cfb3ce44ec.png)
 
 
-## 브랜치 전략 (ex. git flow)
+## 브랜치 전략 (ex. github flow)
 
-- git flow 사용
-- 작업 전에 이슈 생성
-- 이슈 번호로 브랜치를 파서 작업
+- github flow 사용
 - 작업이 다 끝나면 피쳐 브랜치에서 main 브랜치로 Pull Request 작성
-- 같은 팀원 2인의 Approve를 받아야 main 브랜치에 머지 가능
 
 ## 기타
 - 단위 : rem, em 사용
