@@ -92,6 +92,7 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 ## 브랜치 전략 (ex. github flow)
 
 - github flow 사용
+- main에서 feat/[브랜치명] 생성하기
 - 작업이 다 끝나면 피쳐 브랜치에서 main 브랜치로 Pull Request 작성
 
 ## 기타
