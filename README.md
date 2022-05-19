@@ -104,7 +104,8 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 
 ```
 .
-├── mock-data 🗂 목 데이터 저장
+├── data.json 🗂 목 데이터 저장
+├── apis 🗂 api 폴더
 ├── package.json 📦 설치된 패키지를 관리하는 파일
 └── src
     ├── App.jsx ✡️ 앱의 라우팅과 글로벌 스타일 지정
@@ -124,3 +125,5 @@ export한 친구의 이름 바꿔서 쓰지 말기!
         ├── GlobalStyle.js
         └── color.js
 ```
+
+
