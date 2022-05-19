@@ -56,10 +56,12 @@ function Component() {
 <!-- ### 핸들러 함수
 
 기능 기준으로 쓰되 (`modalOpen` 등),
-정말 이 함수가 하는 일이 특정 이벤트 전용이라면 `handle[이벤트당한요소][이벤트]` (`handleInputChange` 등) -->
-
+정말 이 함수가 하는 일이 특정 이벤트 전용이라면 `handle[이벤트당한요소][이벤트]` (`handleInputChange` 등)
+ -->
 
 ### 컴포넌트 이름
+
+camelCase 사용합시다 ~
 
 1. `buttonSearch`
 2. `searchButton` ✅
