@@ -97,6 +97,8 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 
 ## 기타
 - 단위 : rem, em 사용
+- 절대경로 사용 & rc 기준으로 경로 작성 (/components/…      x ,  components/…       o )
+	 
 
 ## 폴더 구조
 
