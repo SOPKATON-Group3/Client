@@ -86,6 +86,7 @@ export한 친구의 이름 바꿔서 쓰지 말기!
 
 ## commit message 컨벤션
 - 커밋 컨벤션은 대표적인거만 지키좌!!
+
 ![스크린샷 2022-03-31 오전 5 02 34](https://user-images.githubusercontent.com/89568030/169188859-74a48236-949e-483b-8ddb-c3cfb3ce44ec.png)
 
 
