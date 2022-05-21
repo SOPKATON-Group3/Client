@@ -3,7 +3,12 @@ import { useState } from "react";
 import { postNewMessage } from "apis/main.api";
 import { default as Close } from "component/common/assets/icon/close.svg";
 
-export default function UploadMessageModal({ hidden, hideModal, name }) {
+export default function UploadMessageModal({
+  hidden,
+  hideModal,
+  name,
+  setIsAbleKey,
+}) {
   const [body, setBody] = useState({
     nickname: "솝커톤",
     contents: "",
@@ -13,6 +18,7 @@ export default function UploadMessageModal({ hidden, hideModal, name }) {
     const response = await postNewMessage(body);
     console.log(response);
     hideModal();
+    setIsAbleKey(true);
   };
   return (
     <>
