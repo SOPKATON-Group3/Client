@@ -1,5 +1,11 @@
+import Information from "component/landing/Information";
+
 function Landing() {
-  return <div>Landing</div>;
+  return (
+    <>
+      <Information></Information>
+    </>
+  );
 }
 
 export default Landing;
