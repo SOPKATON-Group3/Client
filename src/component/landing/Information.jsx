@@ -70,6 +70,7 @@ function Information() {
                 <input
                   type="text"
                   placeholder="닉네임을 입력하세요"
+                  maxLength="10"
                   ref={inputValue}
                 ></input>
               </span>
