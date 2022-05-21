@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
 import UploadMessageModal from "./UploadMessageModal";
 
-function Header() {
+function Header({ name }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,6 +12,7 @@ function Header() {
       <UploadMessageModal
         hidden={!showModal}
         hideModal={() => setShowModal(false)}
+        name={name}
       />
       <StyledLogoWrapper>
         <Logo />

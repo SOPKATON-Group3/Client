@@ -3,13 +3,17 @@ import UnLockContainer from "component/main/unLockContainer";
 import selectKey from "component/common/assets/icon/selectKey.png";
 import { useState } from "react";
 import Header from "component/main/Header";
+import { useLocation } from "react-router-dom";
 
 function Main() {
   const [isAbleKey, setIsAbleKey] = useState(false);
+  const {
+    state: { nickname },
+  } = useLocation();
 
   return (
     <StyledRoot isAbleKey={isAbleKey}>
-      <Header />
+      <Header name={nickname} />
       <UnLockContainer isAbleKey={isAbleKey} />
     </StyledRoot>
   );

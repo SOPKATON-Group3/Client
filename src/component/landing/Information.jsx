@@ -7,19 +7,24 @@ import { useNavigate } from "react-router-dom";
 function Information() {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(1);
-  const name = useRef(null);
+  const inputValue = useRef(null);
+  const [nickname, setNickname] = useState(null);
   let navigate = useNavigate();
 
   const onClickButton = () => {
-    console.log(name.current.value);
+    setNickname(inputValue.current.value);
     setShowModal(true);
   };
 
   useEffect(() => {
     if (index === 3) {
-      navigate("/main");
+      navigate("/main", {
+        state: {
+          nickname: nickname || "없음",
+        },
+      });
     }
-  }, [index]);
+  }, [index, nickname]);
 
   return (
     <>
@@ -57,7 +62,7 @@ function Information() {
                 <input
                   type="text"
                   placeholder="닉네임을 입력하세요"
-                  ref={name}
+                  ref={inputValue}
                 ></input>
               </span>
               <button type="button" onClick={onClickButton}>
