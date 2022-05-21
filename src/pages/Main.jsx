@@ -12,11 +12,13 @@ function Main() {
 
   return (
     <StyledRoot url={wireBackgroundImg} isAbleKey={isAbleKey}>
+
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
       <UnLockContainer isAbleKey={isAbleKey} />
       <StyledWireBackground url={wireBackgroundImg} />
+
       {!isAbleKey && (
         <StyledButtonWrapper>
           <button>작성하기</button>
