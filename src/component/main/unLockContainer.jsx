@@ -30,6 +30,7 @@ function unLockContainer({ isAbleKey }) {
 
   const fetchMessage = async () => {
     const { data } = await postMessage();
+    console.log(data);
     setMessageInfo(data);
   };
 
@@ -54,6 +55,7 @@ function unLockContainer({ isAbleKey }) {
           left={unLock[2]}
           onClick={() => {
             checkIfKeyExist(isAbleKey);
+            setShowModal(true);
             fetchMessage();
           }}
         >

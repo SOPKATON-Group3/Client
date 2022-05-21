@@ -10,7 +10,6 @@ function Header({ name, setIsAbleKey }) {
   useEffect(() => {
     const currentTime = new Date().getHours();
     if (currentTime >= 8 && currentTime <= 16) {
-      console.log(currentTime);
       setIsDayTime(true);
     }
   }, []);

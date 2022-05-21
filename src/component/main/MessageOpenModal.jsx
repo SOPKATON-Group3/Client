@@ -7,17 +7,18 @@ function MessageOpenModal({ hidden, hideModal, messageInfo }) {
     <>
       {!hidden && (
         <>
-          <StyledModalWrapper onClick={hideModal}></StyledModalWrapper>
-          <StyledModalContentWrapper>
-            <StyledLine src={Line} />
-            <StyledUnlockImage src={UnLock} alt="unlock" />
-            <StyledNickName>{messageInfo.nickname}</StyledNickName>
-            <StyledModalContent>{messageInfo.contents}</StyledModalContent>
-          </StyledModalContentWrapper>
-          <StyledButtonWrapper>
-            <button>삭제</button>
-            <button>보관</button>
-          </StyledButtonWrapper>
+          <StyledModalWrapper onClick={hideModal}>
+            <StyledModalContentWrapper>
+              <StyledLine src={Line} />
+              <StyledUnlockImage src={UnLock} alt="unlock" />
+              <StyledNickName>{messageInfo.nickname}</StyledNickName>
+              <StyledModalContent>{messageInfo.contents}</StyledModalContent>
+            </StyledModalContentWrapper>
+            <StyledButtonWrapper>
+              <button>삭제</button>
+              <button>보관</button>
+            </StyledButtonWrapper>
+          </StyledModalWrapper>
         </>
       )}
     </>
@@ -31,7 +32,7 @@ const StyledModalWrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: 10;
 `;
 const StyledLine = styled.img`
   position: absolute;
@@ -81,6 +82,10 @@ const StyledModalContent = styled.p`
 `;
 
 const StyledButtonWrapper = styled.div`
+  position: absolute;
+  bottom: 17.6rem;
+
+  display: flex;
   margin-top: 6.4rem;
   gap: 2.8rem;
   button {
