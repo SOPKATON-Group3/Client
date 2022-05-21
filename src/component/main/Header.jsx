@@ -60,7 +60,7 @@ const StyledButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  z-index: 99;
+  z-index: 1;
   margin-right: 3.9rem;
 
   & button {
