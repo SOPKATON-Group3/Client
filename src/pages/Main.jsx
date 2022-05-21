@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
-import mainBackgroundImg from "component/common/assets/images/mainBackgroundImg.svg";
+import mainBackground from "component/common/assets/images/mainBackground.svg";
 import wireBackgroundImg, {
   ReactComponent as Wire,
 } from "component/common/assets/images/wire.svg";
@@ -8,7 +8,7 @@ import UnLockContainer from "component/main/unLockContainer";
 
 function Main() {
   return (
-    <StyledRoot url={mainBackgroundImg}>
+    <StyledRoot url={mainBackground}>
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
