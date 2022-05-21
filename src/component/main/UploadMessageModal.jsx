@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { postNewMessage } from "apis/main.api";
 import { default as Close } from "component/common/assets/icon/close.svg";
 
-function UploadMessageModal({ hidden, hideModal }) {
+export default function UploadMessageModal({ hidden, hideModal }) {
   const [body, setBody] = useState({
-    nickname: "",
+    nickname: "솝커톤",
     contents: "",
   });
+
   const onClickUploadButton = async () => {
-    const response = await postNewMessage();
+    const response = await postNewMessage(body);
     console.log(response);
   };
   return (
@@ -27,15 +28,17 @@ function UploadMessageModal({ hidden, hideModal }) {
             <StyledModalContentInput
               type="text"
               value={body.contents}
-              onChange={(e) => setBody(e.target.value)}
+              onChange={(e) =>
+                setBody({ nickname: body.nickname, contents: e.target.value })
+              }
               maxLength="300"
               placeholder="즐거웠던 기억을 작성해주세요."
             />
             <StyledMaxLengthText>최대 300자</StyledMaxLengthText>
+            <StyledUploadButton onClick={onClickUploadButton}>
+              완료
+            </StyledUploadButton>
           </StyledModalContentWrapper>
-          <StyledUploadButton onClick={onClickUploadButton}>
-            완료
-          </StyledUploadButton>
         </StyledRoot>
       )}
     </>
@@ -122,12 +125,14 @@ const StyledMaxLengthText = styled.p`
   color: #8f8f8f;
 `;
 const StyledUploadButton = styled.button`
+  position: absolute;
+  bottom: -10rem;
+  border: none;
   width: 12.6rem;
   height: 5.2rem;
   background: #ffffff;
   border-radius: 27.1304px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 26px;
   line-height: 100%;
 `;
-export default UploadMessageModal;
