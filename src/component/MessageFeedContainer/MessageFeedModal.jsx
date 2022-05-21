@@ -31,7 +31,7 @@ const StyledModalWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 `;
 
@@ -55,7 +55,8 @@ const StyledModalContentWrapper = styled.div`
 `;
 const StyledUnlockImage = styled.img`
   position: absolute;
-  top: -10rem;
+  top: -5rem;
+  left: 1.1rem;
 `;
 
 const CommonFontStyle = styled.strong`
@@ -72,5 +73,8 @@ const StyledModalContent = styled(CommonFontStyle)`
   font-size: 25px;
   text-align: justify;
   text-align-last: center;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #bababa;
 `;
 export default MessageFeedModal;

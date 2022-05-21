@@ -5,7 +5,7 @@ function MessageFeedContainer() {
   return (
     <StyledRoot>
       <StyledWrapper />
-      <StyledHeader>누군가 열어본 행복</StyledHeader>
+      <StyledHeader>누군가 열어본 즐거움</StyledHeader>
 
       <StyledMainWrapper>
         <Messages />
@@ -26,16 +26,17 @@ const StyledWrapper = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: #fff;
-  opacity: 0.7;
+  background: #000;
+  opacity: 0.5;
 `;
 
 const StyledHeader = styled.div`
-  margin-top: 88px;
+  margin-top: 14.3rem;
   font-weight: 700;
   font-size: 2.8rem;
   line-height: 160%;
   z-index: 1;
+  color: #fff;
 `;
 
 const StyledMainWrapper = styled.div`
