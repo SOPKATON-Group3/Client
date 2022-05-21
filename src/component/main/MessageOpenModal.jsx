@@ -17,6 +17,10 @@ function MessageFeedModal({ hidden, hideModal }) {
             <StyledUnlockImage src={UnLock} alt="unlock" />
             <StyledNickName>{modalInfo.nickname}</StyledNickName>
             <StyledModalContent>{modalInfo.description}</StyledModalContent>
+            <StyledButtonWrapper>
+              <button>저장하기</button>
+              <button>삭제하기</button>
+            </StyledButtonWrapper>
           </StyledModalContentWrapper>
         </>
       )}
@@ -73,4 +77,18 @@ const StyledModalContent = styled(CommonFontStyle)`
   text-align: justify;
   text-align-last: center;
 `;
+
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  gap: 2.3rem;
+  button {
+    width: 20.1rem;
+    height: 6.7rem;
+    border-radius: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 export default MessageFeedModal;
