@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { postNewMessage } from "apis/main.api";
 import { default as Close } from "component/common/assets/icon/close.svg";
 
@@ -12,6 +12,7 @@ export default function UploadMessageModal({ hidden, hideModal }) {
   const onClickUploadButton = async () => {
     const response = await postNewMessage(body);
     console.log(response);
+    hideModal();
   };
   return (
     <>
@@ -48,6 +49,7 @@ const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6.4rem;
+  z-index: 10;
 `;
 
 const StyledModalWrapper = styled.div`
