@@ -15,7 +15,7 @@ function UploadMessageModal({ hidden, hideModal }) {
   return (
     <>
       {!hidden && (
-        <>
+        <StyledRoot>
           <StyledModalWrapper onClick={hideModal}></StyledModalWrapper>
           <StyledModalContentWrapper>
             <StyledUpperWrapper>
@@ -34,13 +34,18 @@ function UploadMessageModal({ hidden, hideModal }) {
             <StyledMaxLengthText>최대 300자</StyledMaxLengthText>
           </StyledModalContentWrapper>
           <StyledUploadButton onClick={onClickUploadButton}>
-            업로드하기
+            완료
           </StyledUploadButton>
-        </>
+        </StyledRoot>
       )}
     </>
   );
 }
+const StyledRoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+`;
 
 const StyledModalWrapper = styled.div`
   display: block;
@@ -117,9 +122,12 @@ const StyledMaxLengthText = styled.p`
   color: #8f8f8f;
 `;
 const StyledUploadButton = styled.button`
-  width: 32.1rem;
-  height: 6.7rem;
-  background: #d9d9d9;
-  border-radius: 17px;
+  width: 12.6rem;
+  height: 5.2rem;
+  background: #ffffff;
+  border-radius: 27.1304px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 100%;
 `;
 export default UploadMessageModal;
