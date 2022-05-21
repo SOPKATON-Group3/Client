@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import lock from "component/common/assets/icon/lock.png";
 import ManualModal from "./ManualModal";
@@ -7,9 +7,11 @@ import { useNavigate } from "react-router-dom";
 function Information() {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(1);
+  const name = useRef(null);
   let navigate = useNavigate();
 
   const onClickButton = () => {
+    console.log(name.current.value);
     setShowModal(true);
   };
 
@@ -52,7 +54,11 @@ function Information() {
               </div>
               <p className="nickname">당신의 이름을 알려주세요</p>
               <span className="tmp">
-                <input type="text" placeholder="닉네임을 입력하세요"></input>
+                <input
+                  type="text"
+                  placeholder="닉네임을 입력하세요"
+                  ref={name}
+                ></input>
               </span>
               <button type="button" onClick={onClickButton}>
                 완료
