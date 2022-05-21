@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "component/common/assets/images/mainBackground.svg";
 import lock from "component/common/assets/icon/lock.png";
 
 function Information() {
@@ -40,7 +39,6 @@ export default Information;
 const StyledRoot = styled.div`
   width: 192rem;
   height: 108rem;
-  background-image: url(${background});
   background-size: cover;
 `;
 

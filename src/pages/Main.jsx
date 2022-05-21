@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
-import mainBackground from "component/common/assets/images/mainBackground.svg";
 import wireBackgroundImg, {
   ReactComponent as Wire,
 } from "component/common/assets/images/wire.svg";
@@ -33,7 +32,6 @@ export default Main;
 const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
-  background-image: ${(props) => `url(${props.url})`};
   position: relative;
   width: 100vw;
   height: 100vh;
