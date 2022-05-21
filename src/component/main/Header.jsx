@@ -75,6 +75,7 @@ const StyledButtonWrapper = styled.div`
     background-color: transparent;
     color: white;
     color: ${({ isDayTime }) => isDayTime && `#000`};
+    cursor: pointer;
   }
 `;
 
