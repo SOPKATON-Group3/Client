@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
 import { default as Line } from "component/common/assets/images/lines.svg";
 import { postMessage } from "apis/main.api";
-import { useState } from "react";
 
 function MessageOpenModal({ hidden, hideModal, messageInfo }) {
   const fetchStored = async () => {
