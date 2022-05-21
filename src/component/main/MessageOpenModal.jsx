@@ -4,14 +4,22 @@ import { default as Line } from "component/common/assets/images/lines.svg";
 import { postMessage } from "apis/main.api";
 
 function MessageOpenModal({ hidden, hideModal, messageInfo }) {
-  const fetchStored = async () => {
-    const { data } = await postMessage(true, false);
-    console.log(data);
-  };
-  const deleteMessage = async () => {
-    const { data } = await postMessage(true, false);
-    console.log(data);
-  };
+
+  const messageDummyInfo = [
+    "뿡뿡",
+    "어떤 삶을 사든 넌 짱 멋있다 사랑해 스스로야 ~~ 응응!!",
+  ];
+
+
+//   const fetchStored = async () => {
+//     const { data } = await postMessage(true, false);
+//     console.log(data);
+//   };
+//   const deleteMessage = async () => {
+//     const { data } = await postMessage(true, false);
+//     console.log(data);
+//   };
+
   return (
     <>
       {!hidden && (
@@ -20,8 +28,8 @@ function MessageOpenModal({ hidden, hideModal, messageInfo }) {
             <StyledModalContentWrapper>
               <StyledLine src={Line} />
               <StyledUnlockImage src={UnLock} alt="unlock" />
-              <StyledNickName>{messageInfo.nickname}</StyledNickName>
-              <StyledModalContent>{messageInfo.contents}</StyledModalContent>
+              <StyledNickName>{messageDummyInfo[0]}</StyledNickName>
+              <StyledModalContent>{messageDummyInfo[1]}</StyledModalContent>
             </StyledModalContentWrapper>
             <StyledButtonWrapper>
               <button onClick={deleteMessage}>삭제</button>
