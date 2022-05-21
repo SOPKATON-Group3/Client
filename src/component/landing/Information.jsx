@@ -44,7 +44,10 @@ function Information() {
                 </div>
                 <div>
                   <p>우리의 공간에 당신의 이야기를 더해주세요.</p>
-                  <p>당신의 즐거움을 기다릴게요!</p>
+                  <p>
+                    <span className="bold-font">당신의 즐거움</span>을
+                    기다릴게요!
+                  </p>
                 </div>
               </div>
               <p className="nickname">당신의 이름을 알려주세요</p>
@@ -84,7 +87,7 @@ const StyledInfo = styled.div`
   img {
     width: 4.138rem;
     height: 4.406rem;
-    margin: 22.6rem 0 0 0;
+    margin: 22.6rem 0 0.5rem 0;
   }
 
   h1 {
@@ -94,13 +97,17 @@ const StyledInfo = styled.div`
     margin-bottom: 4.1rem;
   }
 
+  .bold-font {
+    font-weight: bold;
+  }
+
   .ment {
     width: 114.4rem;
     color: white;
     font-size: 2.5rem;
     line-height: 4rem;
     text-align: center;
-    margin-bottom: 8.5rem;
+    margin-bottom: 12.2rem;
   }
 
   .bottom-gap {
@@ -109,10 +116,9 @@ const StyledInfo = styled.div`
 
   .nickname {
     height: 4rem;
-    color: white;
+    color: #e2e2e2;
     font-size: 2.5rem;
     margin-bottom: 1.6rem;
-    font-weight: bold;
   }
 
   .tmp {
