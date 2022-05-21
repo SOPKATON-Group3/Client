@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
 import UploadMessageModal from "./UploadMessageModal";
 
@@ -20,7 +21,9 @@ function Header() {
         <Line />
       </StyledButtonWrapper>
       <StyledButtonWrapper>
-        <button>둘러보기</button>
+        <Link to="/letters">
+          <button>둘러보기</button>
+        </Link>
         <Line />
       </StyledButtonWrapper>
     </StyledRoot>
