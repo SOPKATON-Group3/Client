@@ -1,48 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
 import MessageFeedModal from "./MessageFeedModal";
+import { getMessageList } from "apis/detail.api.js";
 
 function Messages() {
-  const [messageList, setMessageList] = useState([
-    {
-      id: 0,
-      nickname: "솝커톤랄라라가나다라",
-      description:
-        "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor 세상의 모서리 구부정하게",
-    },
-    {
-      id: 1,
-      nickname: "솝커톤랄라라가나다라",
-      description:
-        "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor",
-    },
-    {
-      id: 2,
-      nickname: "솝커톤랄라라가나다라",
-      description:
-        "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor 세상의 모서리 구부정하게",
-    },
-    {
-      id: 3,
-      nickname: "솝커톤랄라라가나다라",
-      description:
-        "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor",
-    },
-    {
-      id: 4,
-      nickname: "솝커톤랄라라가나다라",
-      description:
-        "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor",
-    },
-    {
-      id: 5,
-      nickname: "솝커톤랄라라가나다라",
-      description:
-        "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor",
-    },
-  ]);
+  const [messageList, setMessageList] = useState([]);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    fetchMessageList();
+  }, []);
+
+  const fetchMessageList = async () => {
+    const { data } = await getMessageList();
+    setMessageList(data.data);
+  };
 
   const onClickMessage = () => {
     setShowModal(true);
@@ -61,7 +34,7 @@ function Messages() {
           <StUnLockImage src={UnLock} />
           <StyledMessageContainer>
             <StyledTitle>{message.nickname}</StyledTitle>
-            <StyledDescription>{message.description}</StyledDescription>
+            <StyledDescription>{message.contents}</StyledDescription>
           </StyledMessageContainer>
         </StyledMessageWrapper>
       ))}
