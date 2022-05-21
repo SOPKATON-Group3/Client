@@ -67,8 +67,9 @@ function Messages() {
 const StyledRoot = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: 8.4rem 2.6rem;
+  margin-left: 22.7rem;
   flex-wrap: wrap;
 `;
 const FlexColumn = styled.div`
