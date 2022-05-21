@@ -1,34 +1,62 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import lock from "component/common/assets/icon/lock.png";
+import ManualModal from "./ManualModal";
+import { useNavigate } from "react-router-dom";
 
 function Information() {
+  const [showModal, setShowModal] = useState(false);
+  const [index, setIndex] = useState(1);
+  let navigate = useNavigate();
+
+  const onClickButton = () => {
+    setShowModal(true);
+  };
+
+  useEffect(() => {
+    if (index === 3) {
+      navigate("/main");
+    }
+  }, [index]);
+
   return (
     <>
       <StyledRoot>
-        <StyledWrapper>
-          <StyledInfo>
-            <img src={lock} alt="자물쇠" />
-            <img src={lock} alt="서비스명" />
-            <div className="ment">
-              <div className="bottom-gap">
-                <p>당신은 일상 속 즐거움을 흘려보내고 있지 않나요?</p>
+        <ManualModal
+          hidden={!showModal}
+          showModal={() => {
+            setIndex((prev) => prev + 1);
+          }}
+          index={index}
+        />
+        {!showModal && (
+          <StyledWrapper>
+            <StyledInfo>
+              <img src={lock} alt="자물쇠" />
+              <img src={lock} alt="서비스명" />
+              <div className="ment">
+                <div className="bottom-gap">
+                  <p>당신은 일상 속 즐거움을 흘려보내고 있지 않나요?</p>
+                </div>
+                <div className="bottom-gap">
+                  <p>언락에서는 당신의 일상 속 즐거움을 쪽지로 작성하고,</p>
+                  <p>열쇠로 다른 사람의 일상을 열어볼 수 있어요. </p>
+                </div>
+                <div>
+                  <p>우리의 공간에 당신의 이야기를 더해주세요.</p>
+                  <p>당신의 즐거움을 기다릴게요!</p>
+                </div>
               </div>
-              <div className="bottom-gap">
-                <p>언락에서는 당신의 일상 속 즐거움을 쪽지로 작성하고,</p>
-                <p>열쇠로 다른 사람의 일상을 열어볼 수 있어요. </p>
-              </div>
-              <div>
-                <p>우리의 공간에 당신의 이야기를 더해주세요.</p>
-                <p>당신의 즐거움을 기다릴게요!</p>
-              </div>
-            </div>
-            <p className="nickname">당신의 이름을 알려주세요</p>
-            <span className="tmp">
-              <input type="text" placeholder="닉네임을 입력하세요"></input>
-            </span>
-            <button type="button">완료</button>
-          </StyledInfo>
-        </StyledWrapper>
+              <p className="nickname">당신의 이름을 알려주세요</p>
+              <span className="tmp">
+                <input type="text" placeholder="닉네임을 입력하세요"></input>
+              </span>
+              <button type="button" onClick={onClickButton}>
+                완료
+              </button>
+            </StyledInfo>
+          </StyledWrapper>
+        )}
       </StyledRoot>
     </>
   );
@@ -118,7 +146,7 @@ const StyledInfo = styled.div`
     }
   }
 
-  button {
+  & button {
     background-color: white;
     width: 13.9rem;
     height: 4.9rem;
