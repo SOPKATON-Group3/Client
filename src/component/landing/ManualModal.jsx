@@ -38,11 +38,12 @@ const StyledWrapper = styled.div`
     background-color: transparent;
     color: white;
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 2.5rem;
     border: none;
     cursor: pointer;
     bottom: -1000px;
     right: 60px;
+    font-weight: bold;
   }
 `;
 
