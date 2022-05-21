@@ -4,17 +4,23 @@ import wireBackgroundImg, {
   ReactComponent as Wire,
 } from "component/common/assets/images/wire.svg";
 import UnLockContainer from "component/main/unLockContainer";
-
+import UploadMessageModal from "component/main/UploadMessageModal";
+import { useState } from "react";
 function Main() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <StyledRoot>
+      <UploadMessageModal
+        hidden={!showModal}
+        hideModal={() => setShowModal(false)}
+      />
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
       <UnLockContainer />
       <StyledWireBackground url={wireBackgroundImg} />
       <StyledButtonWrapper>
-        <button>작성하기</button>
+        <button onClick={() => setShowModal(true)}>작성하기</button>
         <button>보관함</button>
       </StyledButtonWrapper>
     </StyledRoot>
