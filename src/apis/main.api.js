@@ -2,11 +2,11 @@ import { serverAxios } from "./index";
 
 const PREFIX_URL = "/api/v1";
 
-export const postMessage = async () => {
+export const postMessage = async (body) => {
   try {
     const { data } = await serverAxios.post(`${PREFIX_URL}/modify`, {
-      isOpened: true,
-      isDeleted: false,
+      isOpened: `${body.isOpened}`,
+      isDeleted: `${body.isDeleted}`,
     });
     return { data };
   } catch (err) {
