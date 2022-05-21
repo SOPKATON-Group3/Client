@@ -3,7 +3,7 @@ import { useState } from "react";
 import { postNewMessage } from "apis/main.api";
 import { default as Close } from "component/common/assets/icon/close.svg";
 
-export default function UploadMessageModal({ hidden, hideModal }) {
+export default function UploadMessageModal({ hidden, hideModal, name }) {
   const [body, setBody] = useState({
     nickname: "솝커톤",
     contents: "",
@@ -21,7 +21,7 @@ export default function UploadMessageModal({ hidden, hideModal }) {
           <StyledModalWrapper onClick={hideModal}></StyledModalWrapper>
           <StyledModalContentWrapper>
             <StyledUpperWrapper>
-              <StyledNickName>솝커톤랄라라가나다라</StyledNickName>
+              <StyledNickName>{name}</StyledNickName>
               <StyledCloseButton onClick={hideModal}>
                 <img src={Close} />
               </StyledCloseButton>
