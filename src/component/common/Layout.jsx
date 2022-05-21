@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Background from "component/common/assets/images/mainBackground.svg";
+import MorningBackground from "component/common/assets/images/mainbackground_morning.svg";
+import DayTimeBackground from "component/common/assets/images/mainbackground_daytime.svg";
 import NightBackground from "component/common/assets/images/mainbackground_night.svg";
 import { useEffect, useState } from "react";
 function Layout({ children }) {
@@ -12,13 +13,13 @@ function Layout({ children }) {
     const currentTime = new Date().getHours();
     if (currentTime >= 0 && currentTime <= 8) {
       //새벽
-      setBackground(Background);
+      setBackground(NightBackground);
     } else if (currentTime > 8 && currentTime <= 16) {
       //낮
-      setBackground(Background);
+      setBackground(MorningBackground);
     } else {
       //밤
-      setBackground(NightBackground);
+      setBackground(DayTimeBackground);
     }
   };
   return (

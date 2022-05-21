@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import mainBackground from "component/common/assets/images/mainBackground.svg";
+import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
+
 import wireBackgroundImg, {
   ReactComponent as Wire,
 } from "component/common/assets/images/wire.svg";
@@ -12,6 +14,7 @@ function Main() {
   const [isAbleKey, setIsAbleKey] = useState(false);
 
   return (
+
     <StyledRoot url={mainBackground} isAbleKey={isAbleKey}>
       <Header />
       <UnLockContainer isAbleKey={isAbleKey} />
@@ -25,7 +28,6 @@ export default Main;
 const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
-  background-image: ${(props) => `url(${props.url})`};
   position: relative;
   width: 100vw;
   height: 100vh;
