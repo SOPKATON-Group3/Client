@@ -1,14 +1,22 @@
 import styled from "styled-components";
+import { useState } from "react";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
+import UploadMessageModal from "./UploadMessageModal";
 
 function Header() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <StyledRoot>
+      <UploadMessageModal
+        hidden={!showModal}
+        hideModal={() => setShowModal(false)}
+      />
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
       <StyledButtonWrapper>
-        <button>기록하기</button>
+        <button onClick={() => setShowModal(true)}>기록하기</button>
         <Line />
       </StyledButtonWrapper>
       <StyledButtonWrapper>
@@ -18,7 +26,6 @@ function Header() {
     </StyledRoot>
   );
 }
-export default Header;
 
 const StyledRoot = styled.div`
   display: flex;
@@ -57,3 +64,5 @@ const Line = styled.div`
   height: 0.2rem;
   background-color: white;
 `;
+
+export default Header;

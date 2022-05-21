@@ -3,14 +3,13 @@ import { useState } from "react";
 import { postNewMessage } from "apis/main.api";
 import { default as Close } from "component/common/assets/icon/close.svg";
 
-function UploadMessageModal({ hidden, hideModal }) {
+export default function UploadMessageModal({ hidden, hideModal }) {
   const [body, setBody] = useState({
     nickname: "",
     contents: "",
   });
   const onClickUploadButton = async () => {
     const response = await postNewMessage();
-    console.log(response);
   };
   return (
     <>
@@ -130,4 +129,3 @@ const StyledUploadButton = styled.button`
   font-size: 26px;
   line-height: 100%;
 `;
-export default UploadMessageModal;
