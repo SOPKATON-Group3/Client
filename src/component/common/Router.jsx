@@ -1,14 +1,15 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "pages/Home";
-import MyPage from "pages/MyPage";
+import Main from "pages/Main";
+import Landing from "pages/Landing";
+import OpenedLetters from "pages/OpenedLetters";
 function Router() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/myPage" element={<MyPage />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/main" element={<Main />} />
+          <Route path="/letters" element={<OpenedLetters />} />
         </Routes>
       </BrowserRouter>
     </>
