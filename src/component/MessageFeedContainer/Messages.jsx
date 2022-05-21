@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
+import MessageFeedModal from "./MessageFeedModal";
 
 function Messages() {
   const [messageList, setMessageList] = useState([
@@ -41,11 +42,22 @@ function Messages() {
         "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor",
     },
   ]);
+  const [showModal, setShowModal] = useState(false);
+
+  const onClickMessage = () => {
+    setShowModal(true);
+  };
 
   return (
     <StyledRoot>
+      <MessageFeedModal
+        hidden={!showModal}
+        hideModal={() => {
+          setShowModal(false);
+        }}
+      />
       {messageList.map((message) => (
-        <StyledMessageWrapper key={message.id}>
+        <StyledMessageWrapper key={message.id} onClick={onClickMessage}>
           <StUnLockImage src={UnLock} />
           <StyledMessageContainer>
             <StyledTitle>{message.nickname}</StyledTitle>
