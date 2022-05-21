@@ -65,7 +65,7 @@ function Information() {
                   </p>
                 </div>
               </div>
-              <p className="nickname">당신의 이름을 알려주세요</p>
+              <p className="nickname font">당신의 이름을 알려주세요</p>
               <span className="tmp">
                 <input
                   type="text"

@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
   *{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans KR',sans-serif;
   }
   li{
     list-style:  none;

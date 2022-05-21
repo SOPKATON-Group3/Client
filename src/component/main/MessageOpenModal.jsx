@@ -1,12 +1,24 @@
 import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
 import { default as Line } from "component/common/assets/images/lines.svg";
+import { postMessage } from "apis/main.api";
 
 function MessageOpenModal({ hidden, hideModal, messageInfo }) {
+
   const messageDummyInfo = [
     "뿡뿡",
     "어떤 삶을 사든 넌 짱 멋있다 사랑해 스스로야 ~~ 응응!!",
   ];
+
+
+//   const fetchStored = async () => {
+//     const { data } = await postMessage(true, false);
+//     console.log(data);
+//   };
+//   const deleteMessage = async () => {
+//     const { data } = await postMessage(true, false);
+//     console.log(data);
+//   };
 
   return (
     <>
@@ -20,8 +32,8 @@ function MessageOpenModal({ hidden, hideModal, messageInfo }) {
               <StyledModalContent>{messageDummyInfo[1]}</StyledModalContent>
             </StyledModalContentWrapper>
             <StyledButtonWrapper>
-              <button>삭제</button>
-              <button>보관</button>
+              <button onClick={deleteMessage}>삭제</button>
+              <button onClick={fetchStored}>보관</button>
             </StyledButtonWrapper>
           </StyledModalWrapper>
         </>

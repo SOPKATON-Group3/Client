@@ -11,7 +11,6 @@ import unLock6 from "component/common/assets/icon/unLock6.png";
 import unLock7 from "component/common/assets/icon/unLock7.png";
 import unLock8 from "component/common/assets/icon/unLock8.png";
 import unLock9 from "component/common/assets/icon/unLock9.png";
-
 import { postMessage } from "apis/main.api";
 
 function unLockContainer({ isAbleKey }) {
@@ -21,19 +20,18 @@ function unLockContainer({ isAbleKey }) {
     nickname: "",
     contents: "",
   });
-
   const checkIfKeyExist = (isAbleKey) => {
     if (isAbleKey !== true) return;
 
     setHidden(false);
   };
-
-  const fetchMessage = async () => {
-    const { data } = await postMessage();
-    console.log(data);
-    setMessageInfo(data);
+  const fetchStored = async () => {
+    const { data } = await postMessage(true, false);
+    setMessageInfo({
+      nickname: data.nickname,
+      contents: data.contents,
+    });
   };
-
   const unLockInfo = [
     [unLock1, 46.7, 20.6],
     [unLock2, 70.7, 45],
@@ -56,7 +54,7 @@ function unLockContainer({ isAbleKey }) {
           onClick={() => {
             checkIfKeyExist(isAbleKey);
             setShowModal(true);
-            fetchMessage();
+            fetchStored();
           }}
         >
           <img src={unLock[0]} alt="자물쇠" />
