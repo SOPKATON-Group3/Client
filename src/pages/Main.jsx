@@ -14,7 +14,6 @@ function Main() {
   const [isAbleKey, setIsAbleKey] = useState(false);
 
   return (
-
     <StyledRoot url={mainBackground} isAbleKey={isAbleKey}>
       <Header />
       <UnLockContainer isAbleKey={isAbleKey} />
