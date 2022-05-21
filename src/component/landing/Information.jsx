@@ -148,7 +148,7 @@ const StyledInfo = styled.div`
   }
 
   input {
-    width: 43.6rem;
+    width: 40rem;
     height: 6rem;
     border: 2px solid #ffffff;
     border-radius: 3.65rem;
@@ -158,10 +158,8 @@ const StyledInfo = styled.div`
     position: relative;
     font-size: 2.2rem;
     font-weight: bold;
-
-    &::placeholder {
-      padding: 4.1rem;
-    }
+    box-sizing: border-box;
+    padding-left: 3rem;
   }
 
   & button {
