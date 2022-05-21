@@ -1,33 +1,28 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
+import { default as Line } from "component/common/assets/images/lines.svg";
 
-function MessageFeedModal({ hidden, hideModal }) {
-  const [modalInfo, setModalInfo] = useState({
-    nickname: "솝커톤랄라라가나다라",
-    description:
-      "세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor 넌 모르지 떨군 세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor 넌 모르지 떨군 세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머 Play list 음악까지 다 Minor 넌 모르지 떨군  넌 모르지 떨군  세상의 모서리 구부정하게 커버린 골칫거리 Outsider 걸음걸이 옷차림 이어폰 너머로",
-  });
+function MessageOpenModal({ hidden, hideModal, messageInfo }) {
   return (
     <>
       {!hidden && (
         <>
           <StyledModalWrapper onClick={hideModal}></StyledModalWrapper>
           <StyledModalContentWrapper>
+            <StyledLine src={Line} />
             <StyledUnlockImage src={UnLock} alt="unlock" />
-            <StyledNickName>{modalInfo.nickname}</StyledNickName>
-            <StyledModalContent>{modalInfo.description}</StyledModalContent>
-            <StyledButtonWrapper>
-              <button>저장하기</button>
-              <button>삭제하기</button>
-            </StyledButtonWrapper>
+            <StyledNickName>{messageInfo.nickname}</StyledNickName>
+            <StyledModalContent>{messageInfo.contents}</StyledModalContent>
           </StyledModalContentWrapper>
+          <StyledButtonWrapper>
+            <button>삭제</button>
+            <button>보관</button>
+          </StyledButtonWrapper>
         </>
       )}
     </>
   );
 }
-
 const StyledModalWrapper = styled.div`
   display: block;
   position: fixed;
@@ -35,8 +30,12 @@ const StyledModalWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
+`;
+const StyledLine = styled.img`
+  position: absolute;
+  top: 0;
 `;
 
 const StyledModalContentWrapper = styled.div`
@@ -54,41 +53,53 @@ const StyledModalContentWrapper = styled.div`
   transform: translate(-50%, -40%);
   background: #f2f2f2;
   border-radius: 41px;
-  padding: 15px;
   z-index: 1;
 `;
 const StyledUnlockImage = styled.img`
   position: absolute;
-  top: -10rem;
+  top: -5rem;
+  left: 1.1rem;
 `;
 
-const CommonFontStyle = styled.strong`
-  width: 67.9rem;
-  font-weight: 400;
+const StyledNickName = styled.strong`
+  position: absolute;
+  top: 4rem;
+  left: 5.7rem;
+  font-weight: 500;
+  font-size: 22px;
   line-height: 160%;
 `;
 
-const StyledNickName = styled(CommonFontStyle)`
+const StyledModalContent = styled.p`
+  position: absolute;
+  top: 11.4rem;
+  left: 8rem;
+  width: 67.9rem;
+  font-weight: 400;
   font-size: 22px;
-`;
-
-const StyledModalContent = styled(CommonFontStyle)`
-  font-size: 25px;
-  text-align: justify;
-  text-align-last: center;
+  line-height: 200%;
 `;
 
 const StyledButtonWrapper = styled.div`
-  display: flex;
-  gap: 2.3rem;
+  margin-top: 6.4rem;
+  gap: 2.8rem;
   button {
-    width: 20.1rem;
-    height: 6.7rem;
-    border-radius: 2.4rem;
+    border-radius: 2.6rem;
+    width: 10.3rem;
+    height: 5.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  button:nth-child(1) {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+  }
+  button:nth-child(2) {
+    background-color: white;
+    border: 1px solid white;
+  }
 `;
 
-export default MessageFeedModal;
+export default MessageOpenModal;

@@ -5,12 +5,12 @@ const PREFIX_URL = "/api/v1";
 export const postMessage = async () => {
   try {
     const { data } = await serverAxios.post(`${PREFIX_URL}/modify`, {
-      //   headers: {
-      //     Accept: "application/json",
-      //   },
+      isOpened: true,
+      isDeleted: false,
     });
     return { data };
   } catch (err) {
+    console.log(err);
     return null;
   }
 };
