@@ -82,12 +82,11 @@ const StyledModalContent = styled.p`
 `;
 
 const StyledButtonWrapper = styled.div`
-  position: absolute;
-  bottom: 17.6rem;
-
   display: flex;
-  margin-top: 6.4rem;
   gap: 2.8rem;
+  justify-content: center;
+  margin-top: 90rem;
+
   button {
     border-radius: 2.6rem;
     width: 10.3rem;
