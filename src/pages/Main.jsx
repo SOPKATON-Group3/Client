@@ -11,7 +11,7 @@ function Main() {
   const [isAbleKey, setIsAbleKey] = useState(true);
 
   return (
-    <StyledRoot url={mainBackgroundImg} isAbleKey={isAbleKey}>
+    <StyledRoot url={wireBackgroundImg} isAbleKey={isAbleKey}>
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>

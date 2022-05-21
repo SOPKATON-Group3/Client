@@ -33,7 +33,7 @@ function Information() {
           <StyledWrapper>
             <StyledInfo>
               <img src={lock} alt="자물쇠" />
-              <img src={lock} alt="서비스명" />
+              <h1>Unlock</h1>
               <div className="ment">
                 <div className="bottom-gap">
                   <p>당신은 일상 속 즐거움을 흘려보내고 있지 않나요?</p>
@@ -81,16 +81,17 @@ const StyledInfo = styled.div`
   flex-direction: column;
   align-items: center;
 
-  img:nth-child(1) {
+  img {
     width: 4.138rem;
     height: 4.406rem;
     margin: 22.6rem 0 0 0;
   }
 
-  img:nth-child(2) {
-    width: 14.8rem;
-    height: 6.3rem;
-    margin-bottom: 1.9rem;
+  h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 4.1rem;
   }
 
   .ment {
