@@ -3,10 +3,15 @@ import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
 import MessageFeedModal from "./MessageFeedModal";
 import { getMessageList } from "apis/messageFeed.api.js";
+import Header from "component/main/Header";
 
 function Messages() {
   const [messageList, setMessageList] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [modalInfo, setModalInfo] = useState({
+    nickname: "",
+    contents: "",
+  });
 
   useEffect(() => {
     fetchMessageList();
@@ -17,28 +22,38 @@ function Messages() {
     setMessageList(data.data);
   };
 
-  const onClickMessage = () => {
+  const onClickMessage = (nickname, contents) => {
+    setModalInfo({ nickname: nickname, contents: contents });
     setShowModal(true);
   };
 
   return (
-    <StyledRoot>
-      <MessageFeedModal
-        hidden={!showModal}
-        hideModal={() => {
-          setShowModal(false);
-        }}
-      />
-      {messageList.map((message) => (
-        <StyledMessageWrapper key={message.id} onClick={onClickMessage}>
-          <StUnLockImage src={UnLock} />
-          <StyledMessageContainer>
-            <StyledTitle>{message.nickname}</StyledTitle>
-            <StyledDescription>{message.contents}</StyledDescription>
-          </StyledMessageContainer>
-        </StyledMessageWrapper>
-      ))}
-    </StyledRoot>
+    <>
+      <StyledRoot>
+        <StyledHeader>
+          <Header />
+        </StyledHeader>
+        <MessageFeedModal
+          hidden={!showModal}
+          hideModal={() => {
+            setShowModal(false);
+          }}
+          modalInfo={modalInfo}
+        />
+        {messageList.map((message) => (
+          <StyledMessageWrapper
+            key={message.id}
+            onClick={() => onClickMessage(message.nickname, message.contents)}
+          >
+            <StUnLockImage src={UnLock} />
+            <StyledMessageContainer>
+              <StyledTitle>{message.nickname}</StyledTitle>
+              <StyledDescription>{message.contents}</StyledDescription>
+            </StyledMessageContainer>
+          </StyledMessageWrapper>
+        ))}
+      </StyledRoot>
+    </>
   );
 }
 const StyledRoot = styled.div`
@@ -47,6 +62,12 @@ const StyledRoot = styled.div`
   justify-content: center;
   gap: 8.4rem 2.6rem;
   flex-wrap: wrap;
+`;
+const StyledHeader = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 `;
 const FlexColumn = styled.div`
   display: flex;
