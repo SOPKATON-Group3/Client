@@ -12,7 +12,6 @@ function Main() {
 
   return (
     <StyledRoot url={wireBackgroundImg} isAbleKey={isAbleKey}>
-
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
