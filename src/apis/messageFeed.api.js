@@ -1,6 +1,6 @@
 import { serverAxios } from "./index";
 
-const PREFIX_URL = "/api/v0";
+const PREFIX_URL = "/api/v1";
 
 export const getMessageList = async () => {
   try {

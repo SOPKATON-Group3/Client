@@ -26,12 +26,3 @@ export const postNewMessage = async (body) => {
     return null;
   }
 };
-// export const postNewMessage = async () => {
-//   try {
-//     const { data } = await serverAxios.get(`${PREFIX_URL}/add`);
-//     return { data };
-//   } catch (err) {
-
-//     return null;
-//   }
-// };

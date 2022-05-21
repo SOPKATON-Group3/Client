@@ -38,9 +38,6 @@ const StyledRoot = styled.div`
   width: 100vw;
   min-height: 100vh;
   background-image: ${(props) => `url(${props.url})`};
-
-  position: absolute;
-  top: 0;
 `;
 
 const StyledMain = styled.main`

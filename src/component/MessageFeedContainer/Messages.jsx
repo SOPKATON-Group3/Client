@@ -1,11 +1,25 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
+import { default as UnLockWhite } from "component/common/assets/images/unlock_white.svg";
+import { default as UnLockBlue } from "component/common/assets/images/unlock_blue.svg";
+import { default as UnLockYellow } from "component/common/assets/images/unlock_yellow.svg";
+import { default as UnLockOrange } from "component/common/assets/images/unlock_orange.svg";
 import MessageFeedModal from "./MessageFeedModal";
 import { getMessageList } from "apis/messageFeed.api.js";
 import Header from "component/main/Header";
 
 function Messages() {
+  const [unlockList, setUnlockList] = useState([
+    UnLock,
+    UnLockWhite,
+    UnLockBlue,
+    UnLockYellow,
+    UnLockOrange,
+  ]);
+  useEffect(() => {
+    setUnlockList((prev) => prev.sort(() => Math.random() - 0.5));
+  }, []);
   const [messageList, setMessageList] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState({
@@ -40,12 +54,12 @@ function Messages() {
           }}
           modalInfo={modalInfo}
         />
-        {messageList.map((message) => (
+        {messageList.map((message, index) => (
           <StyledMessageWrapper
             key={message.id}
             onClick={() => onClickMessage(message.nickname, message.contents)}
           >
-            <StUnLockImage src={UnLock} />
+            <StUnLockImage src={unlockList[index]} />
             <StyledMessageContainer>
               <StyledTitle>{message.nickname}</StyledTitle>
               <StyledDescription>{message.contents}</StyledDescription>
@@ -67,7 +81,6 @@ const StyledHeader = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
 `;
 const FlexColumn = styled.div`
   display: flex;
@@ -103,11 +116,16 @@ const CommonFontStyle = styled.p`
 
 const StyledTitle = styled(CommonFontStyle)`
   font-weight: 600;
+  position: absolute;
+  top: 4.9rem;
 `;
 const StyledDescription = styled(CommonFontStyle)`
   font-weight: 400;
   width: 37.8rem;
+  text-align: center;
   color: #636363;
+  position: absolute;
+  top: 10.8rem;
 
   overflow: hidden;
   text-overflow: ellipsis;

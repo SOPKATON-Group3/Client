@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import lock from "component/common/assets/icon/lock.png";
 import ManualModal from "./ManualModal";
@@ -7,17 +7,24 @@ import { useNavigate } from "react-router-dom";
 function Information() {
   const [showModal, setShowModal] = useState(false);
   const [index, setIndex] = useState(1);
+  const inputValue = useRef(null);
+  const [nickname, setNickname] = useState(null);
   let navigate = useNavigate();
 
   const onClickButton = () => {
+    setNickname(inputValue.current.value);
     setShowModal(true);
   };
 
   useEffect(() => {
     if (index === 3) {
-      navigate("/main");
+      navigate("/main", {
+        state: {
+          nickname: nickname || "없음",
+        },
+      });
     }
-  }, [index]);
+  }, [index, nickname]);
 
   return (
     <>
@@ -33,18 +40,26 @@ function Information() {
           <StyledWrapper>
             <StyledInfo>
               <img src={lock} alt="자물쇠" />
-              <h1>Unlock</h1>
+              <h1 className="font">Unlock</h1>
               <div className="ment">
                 <div className="bottom-gap">
-                  <p>당신은 일상 속 즐거움을 흘려보내고 있지 않나요?</p>
+                  <p className="font">
+                    당신은 일상 속 즐거움을 흘려보내고 있지 않나요?
+                  </p>
                 </div>
                 <div className="bottom-gap">
-                  <p>언락에서는 당신의 일상 속 즐거움을 쪽지로 작성하고,</p>
-                  <p>열쇠로 다른 사람의 일상을 열어볼 수 있어요. </p>
+                  <p className="font">
+                    언락에서는 당신의 일상 속 즐거움을 쪽지로 작성하고,
+                  </p>
+                  <p className="font">
+                    열쇠로 다른 사람의 일상을 열어볼 수 있어요.{" "}
+                  </p>
                 </div>
                 <div>
-                  <p>우리의 공간에 당신의 이야기를 더해주세요.</p>
-                  <p>
+                  <p className="font">
+                    우리의 공간에 당신의 이야기를 더해주세요.
+                  </p>
+                  <p className="font">
                     <span className="bold-font">당신의 즐거움</span>을
                     기다릴게요!
                   </p>
@@ -52,7 +67,11 @@ function Information() {
               </div>
               <p className="nickname">당신의 이름을 알려주세요</p>
               <span className="tmp">
-                <input type="text" placeholder="닉네임을 입력하세요"></input>
+                <input
+                  type="text"
+                  placeholder="닉네임을 입력하세요"
+                  ref={inputValue}
+                ></input>
               </span>
               <button type="button" onClick={onClickButton}>
                 완료
@@ -107,7 +126,11 @@ const StyledInfo = styled.div`
     font-size: 2.5rem;
     line-height: 4rem;
     text-align: center;
-    margin-bottom: 12.2rem;
+    margin-bottom: 10.2rem;
+  }
+
+  .font {
+    font-family: "Inter", sans-serif;
   }
 
   .bottom-gap {
@@ -137,7 +160,7 @@ const StyledInfo = styled.div`
   }
 
   input {
-    width: 43.6rem;
+    width: 40rem;
     height: 6rem;
     border: 2px solid #ffffff;
     border-radius: 3.65rem;
@@ -147,10 +170,8 @@ const StyledInfo = styled.div`
     position: relative;
     font-size: 2.2rem;
     font-weight: bold;
-
-    &::placeholder {
-      padding: 4.1rem;
-    }
+    box-sizing: border-box;
+    padding-left: 3rem;
   }
 
   & button {
