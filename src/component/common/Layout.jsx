@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import MorningBackground from "component/common/assets/images/mainbackground_morning.svg";
-import DayTimeBackground from "component/common/assets/images/mainbackground_daytime.svg";
-import NightBackground from "component/common/assets/images/mainbackground_night.svg";
+import MorningBackground from "component/common/assets/images/mainBackground_morning.svg";
+import DayTimeBackground from "component/common/assets/images/mainBackground_daytime.svg";
+import NightBackground from "component/common/assets/images/mainBackground_night.svg";
 import { useEffect, useState } from "react";
 function Layout({ children }) {
   const [background, setBackground] = useState("");
