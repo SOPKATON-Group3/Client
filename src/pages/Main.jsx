@@ -9,7 +9,7 @@ import selectKey from "component/common/assets/icon/selectKey.png";
 import { useState } from "react";
 
 function Main() {
-  const [isAbleKey, setIsAbleKey] = useState(true);
+  const [isAbleKey, setIsAbleKey] = useState(false);
 
   return (
     <StyledRoot url={mainBackgroundImg} isAbleKey={isAbleKey}>
