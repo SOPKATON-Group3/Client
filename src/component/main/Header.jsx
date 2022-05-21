@@ -65,7 +65,8 @@ const StyledButtonWrapper = styled.div`
   margin-right: 3.9rem;
 
   & button {
-    width: 8.1rem;
+    font-size: 2.2rem;
+    width: 10.1rem;
     height: 3.5rem;
     border: none;
     display: flex;
@@ -78,7 +79,7 @@ const StyledButtonWrapper = styled.div`
 `;
 
 const Line = styled.div`
-  width: 8.2rem;
+  width: 10.2rem;
   height: 0.2rem;
   background-color: #fff;
   background-color: ${({ isDayTime }) => isDayTime && `#000`};
