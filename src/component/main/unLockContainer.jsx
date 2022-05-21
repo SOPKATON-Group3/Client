@@ -12,154 +12,77 @@ import unLock7 from "component/common/assets/icon/unLock7.png";
 import unLock8 from "component/common/assets/icon/unLock8.png";
 import unLock9 from "component/common/assets/icon/unLock9.png";
 
-function unLockContainer({ isAbleKey }) {
-  const [showModal, setShowModal] = useState(false);
+import { postMessage } from "apis/main.api";
 
-  // const checkIfKeyExist = (isAbleKey) => {
-  //   // if (isAbleKey === true)
-  // };
+function unLockContainer({ isAbleKey }) {
+  const [hidden, setHidden] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [messageInfo, setMessageInfo] = useState({
+    nickname: "",
+    contents: "",
+  });
+
+  const checkIfKeyExist = (isAbleKey) => {
+    if (isAbleKey !== true) return;
+
+    setHidden(false);
+  };
+
+  const fetchMessage = async () => {
+    const { data } = await postMessage();
+    setMessageInfo(data);
+  };
+
+  const unLockInfo = [
+    [unLock1, 46.7, 20.6],
+    [unLock2, 70.7, 45],
+    [unLock3, 32.2, 50.7],
+    [unLock4, 54.3, 73.3],
+    [unLock5, 78, 62.5],
+    [unLock6, 32.2, 110.8],
+    [unLock7, 61.2, 122.7],
+    [unLock8, 49.1, 155.2],
+    [unLock9, 63.6, 110.8],
+  ];
 
   return (
     <StyledRoot>
-      <UnLockWrapper1>
-        <img src={unLock1} alt="자물쇠" />
-      </UnLockWrapper1>
-      <UnLockWrapper2>
-        <img src={unLock2} alt="자물쇠" />
-      </UnLockWrapper2>
-      <UnLockWrapper3>
-        <img src={unLock3} alt="자물쇠" />
-      </UnLockWrapper3>
-      <UnLockWrapper4>
-        <img src={unLock4} alt="자물쇠" />
-      </UnLockWrapper4>
-      <UnLockWrapper5>
-        <img src={unLock5} alt="자물쇠" />
-      </UnLockWrapper5>
-      <UnLockWrapper6>
-        <img src={unLock6} alt="자물쇠" />
-      </UnLockWrapper6>
-      <UnLockWrapper7>
-        <img src={unLock7} alt="자물쇠" />
-      </UnLockWrapper7>
-      <UnLockWrapper8>
-        <img src={unLock8} alt="자물쇠" />
-      </UnLockWrapper8>
-      <UnLockWrapper9>
-        <img src={unLock9} alt="자물쇠" />
-      </UnLockWrapper9>
+      {unLockInfo.map((unLock, index) => (
+        <UnLockWrapper
+          key={index}
+          top={unLock[1]}
+          left={unLock[2]}
+          onClick={() => {
+            checkIfKeyExist(isAbleKey);
+            fetchMessage();
+          }}
+        >
+          <img src={unLock[0]} alt="자물쇠" />
+        </UnLockWrapper>
+      ))}
       <MessageOpenModal
         hidden={!showModal}
-        hideModal={() => {
-          setShowModal(false);
-        }}
+        hideModal={() => setShowModal(false)}
+        messageInfo={messageInfo}
       />
     </StyledRoot>
   );
 }
-
-export default unLockContainer;
 
 const StyledRoot = styled.div`
   display: flex;
   position: relative;
 `;
 
-const UnLockWrapper1 = styled.button`
+const UnLockWrapper = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 46.7rem;
-  left: 20.6rem;
+  top: ${(props) => props.top}rem;
+  left: ${(props) => props.left}rem;
   z-index: 2;
   border: 0;
   outline: 0;
   background-color: transparent;
 `;
 
-const UnLockWrapper2 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 70.7rem;
-  left: 45rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper3 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 32.2rem;
-  left: 50.7rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper4 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 54.3rem;
-  left: 73.3rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper5 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 78rem;
-  left: 62.5rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper6 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 32.2rem;
-  left: 110.8rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper7 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 61.2rem;
-  left: 122.7rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper8 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 49.1rem;
-  left: 155.2rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
-
-const UnLockWrapper9 = styled.button`
-  cursor: inherit;
-  position: absolute;
-  top: 63.6rem;
-  left: 166.1rem;
-  z-index: 2;
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-`;
+export default unLockContainer;

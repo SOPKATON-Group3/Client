@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
 import UploadMessageModal from "./UploadMessageModal";
 
-function Header({ name }) {
+function Header({ name, setIsAbleKey }) {
   const [showModal, setShowModal] = useState(false);
   const [isDayTime, setIsDayTime] = useState(false);
   useEffect(() => {
@@ -21,6 +21,7 @@ function Header({ name }) {
         hidden={!showModal}
         hideModal={() => setShowModal(false)}
         name={name}
+        setIsAbleKey={setIsAbleKey}
       />
       <StyledLogoWrapper>
         <StyledLogo isDayTime={isDayTime} />

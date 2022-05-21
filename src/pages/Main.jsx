@@ -13,7 +13,7 @@ function Main() {
 
   return (
     <StyledRoot isAbleKey={isAbleKey}>
-      <Header name={nickname} />
+      <Header name={nickname} setIsAbleKey={setIsAbleKey} />
       <UnLockContainer isAbleKey={isAbleKey} />
     </StyledRoot>
   );
