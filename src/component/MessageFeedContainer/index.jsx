@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import Background from "component/common/assets/images/mainBackground.svg";
 import Messages from "./Messages";
 
 function MessageFeedContainer() {
   return (
     <StyledRoot>
-      <StyledWrapper url={Background} />
+      <StyledWrapper />
       <StyledHeader>누군가 열어본 행복</StyledHeader>
 
       <StyledMainWrapper>
@@ -25,10 +24,10 @@ const StyledRoot = styled.div`
 const StyledWrapper = styled.div`
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-image: ${(props) => `url(${props.url})`};
-  opacity: 0.3;
+  background: #fff;
+  opacity: 0.7;
 `;
 
 const StyledHeader = styled.div`
@@ -36,6 +35,7 @@ const StyledHeader = styled.div`
   font-weight: 700;
   font-size: 2.8rem;
   line-height: 160%;
+  z-index: 1;
 `;
 
 const StyledMainWrapper = styled.div`
