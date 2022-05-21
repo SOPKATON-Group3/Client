@@ -68,7 +68,7 @@ const StyledRoot = styled.div`
 const UnLockWrapper1 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 58.8rem;
+  top: 46.7rem;
   left: 20.6rem;
   z-index: 2;
   border: 0;
@@ -79,7 +79,7 @@ const UnLockWrapper1 = styled.button`
 const UnLockWrapper2 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 82.8rem;
+  top: 70.7rem;
   left: 45rem;
   z-index: 2;
   border: 0;
@@ -90,7 +90,7 @@ const UnLockWrapper2 = styled.button`
 const UnLockWrapper3 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 44.3rem;
+  top: 32.2rem;
   left: 50.7rem;
   z-index: 2;
   border: 0;
@@ -101,7 +101,7 @@ const UnLockWrapper3 = styled.button`
 const UnLockWrapper4 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 66.4rem;
+  top: 54.3rem;
   left: 73.3rem;
   z-index: 2;
   border: 0;
@@ -112,7 +112,7 @@ const UnLockWrapper4 = styled.button`
 const UnLockWrapper5 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 90.1rem;
+  top: 78rem;
   left: 62.5rem;
   z-index: 2;
   border: 0;
@@ -123,7 +123,7 @@ const UnLockWrapper5 = styled.button`
 const UnLockWrapper6 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 44.3rem;
+  top: 32.2rem;
   left: 110.8rem;
   z-index: 2;
   border: 0;
@@ -134,7 +134,7 @@ const UnLockWrapper6 = styled.button`
 const UnLockWrapper7 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 73.3rem;
+  top: 61.2rem;
   left: 122.7rem;
   z-index: 2;
   border: 0;
@@ -145,7 +145,7 @@ const UnLockWrapper7 = styled.button`
 const UnLockWrapper8 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 61.2rem;
+  top: 49.1rem;
   left: 155.2rem;
   z-index: 2;
   border: 0;
@@ -156,7 +156,7 @@ const UnLockWrapper8 = styled.button`
 const UnLockWrapper9 = styled.button`
   cursor: inherit;
   position: absolute;
-  top: 75.7rem;
+  top: 63.6rem;
   left: 166.1rem;
   z-index: 2;
   border: 0;
