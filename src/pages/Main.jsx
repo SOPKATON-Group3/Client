@@ -14,6 +14,10 @@ function Main() {
       </StyledLogoWrapper>
       <UnLockContainer />
       <StyledWireBackground url={wireBackgroundImg} />
+      <StyledButtonWrapper>
+        <button>작성하기</button>
+        <button>보관함</button>
+      </StyledButtonWrapper>
     </StyledRoot>
   );
 }
@@ -41,4 +45,20 @@ const StyledWireBackground = styled.div`
   width: 100%;
   height: 58%;
   bottom: 0;
+`;
+
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  position: absolute;
+  bottom: 6.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  button {
+    width: 31.9rem;
+    height: 7.2rem;
+    border-radius: 2.4rem;
+  }
 `;
