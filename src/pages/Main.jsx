@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import mainBackground from "component/common/assets/images/mainBackground.svg";
 import { ReactComponent as Logo } from "component/common/assets/icon/logo.svg";
 
 import wireBackgroundImg, {
@@ -14,10 +13,10 @@ function Main() {
   const [isAbleKey, setIsAbleKey] = useState(false);
 
   return (
-    <StyledRoot url={mainBackground} isAbleKey={isAbleKey}>
+    <StyledRoot isAbleKey={isAbleKey}>
       <Header />
       <UnLockContainer isAbleKey={isAbleKey} />
-      <StyledWireBackground url={wireBackgroundImg} />
+      <StyledWireBackground />
     </StyledRoot>
   );
 }
