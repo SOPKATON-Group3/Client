@@ -1,5 +1,6 @@
+import MessageFeedContainer from "component/MessageFeedContainer";
 function MessageFeed() {
-  return <div>MessageFeed</div>;
+  return <MessageFeedContainer />;
 }
 
 export default MessageFeed;

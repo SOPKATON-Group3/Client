@@ -26,6 +26,22 @@
 		<li>웹파트의 마라샹궈🔥</li>
 		</ul>
 	</tr>
+	<tr>
+	<td>
+		<ul>
+		<li>메인 페이지 & 쪽지 열람 모달 </li>
+		</ul>
+	</td>
+	<td>
+	<ul>
+		<li>보관함 페이지 & 보관함 세부</li>
+	</ul>
+	</td>
+	<td>
+		<ul>
+		<li>랜딩 페이지 & 쪽지 작성 모달 & 온보딩 모달 & 열쇠 획득 모달</li>
+		</ul>
+	</tr>
 	</table>
 </div>
 
@@ -37,6 +53,10 @@
   <img src="https://img.shields.io/badge/styled--components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
   <img src="https://img.shields.io/badge/github action-2671E5?style=flat-square&logo=GitHub%20Actions&logoColor=white"/>
 </div>
+
+
+## 서비스 소개
+언락🔑 - 즐거운 일상을 쪽지로 공유하는 서비스 
 
 
 ## 코드 컨벤션
@@ -113,17 +133,17 @@ export한 친구의 이름 바꿔서 쓰지 말기!
     ├── index.js
     ├── component
     │   ├── common 🗂 공통으로 쓰일 컴포넌트 저장
-    │   │   ├── Footer
-    │   │   ├── Header
     │   │   └── assets
-    │   ├── home 🗂 home 페이지에 쓰일 컴포넌트 저장
-    │   └── myPage 🗂 myPage 페이지에 쓰일 컴포넌트 저장
+    │   │       ├── icon
+    │   │       └── images
+    │   ├── landing 🗂 landing 페이지에 쓰일 컴포넌트 저장
+    │   ├── main 🗂 main 페이지에 쓰일 컴포넌트 저장
+    │   └── messageFeed 🗂 messageFeed 페이지에 쓰일 컴포넌트 저장
     ├── pages 🗂 라우팅 시 보여질 페이지 컴포넌트 저장
-    │   ├── home
-    │   └── myPage
-    │       └── MyPage
+    │   ├── Landing
+    │   ├── Main
+    │   └── MessageFeed
     └── styles
-        ├── GlobalStyle.js
         └── color.js
 ```
 
