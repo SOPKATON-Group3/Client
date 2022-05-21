@@ -2,11 +2,15 @@ import styled from "styled-components";
 import Messages from "./Messages";
 import { default as closeButton } from "component/common/assets/icon/close.svg";
 import { useNavigate } from "react-router-dom";
+import Header from "component/main/Header";
 
 function MessageFeedContainer() {
   const navigate = useNavigate();
   return (
     <StyledRoot>
+      <StHeader>
+        <Header />
+      </StHeader>
       <StyledWrapper />
       <StyledHeaderWrapper>
         <StyledHeader>누군가 열어본 즐거움</StyledHeader>
@@ -26,6 +30,12 @@ const StyledRoot = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const StHeader = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const StyledWrapper = styled.div`

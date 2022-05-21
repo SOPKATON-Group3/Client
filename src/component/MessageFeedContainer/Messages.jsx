@@ -7,7 +7,6 @@ import { default as UnLockYellow } from "component/common/assets/images/unlock_y
 import { default as UnLockOrange } from "component/common/assets/images/unlock_orange.svg";
 import MessageFeedModal from "./MessageFeedModal";
 import { getMessageList } from "apis/messageFeed.api.js";
-import Header from "component/main/Header";
 
 function Messages() {
   const [unlockList, setUnlockList] = useState([
@@ -42,32 +41,27 @@ function Messages() {
   };
 
   return (
-    <>
-      <StyledRoot>
-        <StyledHeader>
-          <Header />
-        </StyledHeader>
-        <MessageFeedModal
-          hidden={!showModal}
-          hideModal={() => {
-            setShowModal(false);
-          }}
-          modalInfo={modalInfo}
-        />
-        {messageList.map((message, index) => (
-          <StyledMessageWrapper
-            key={message.id}
-            onClick={() => onClickMessage(message.nickname, message.contents)}
-          >
-            <StUnLockImage src={unlockList[index]} />
-            <StyledMessageContainer>
-              <StyledTitle>{message.nickname}</StyledTitle>
-              <StyledDescription>{message.contents}</StyledDescription>
-            </StyledMessageContainer>
-          </StyledMessageWrapper>
-        ))}
-      </StyledRoot>
-    </>
+    <StyledRoot>
+      <MessageFeedModal
+        hidden={!showModal}
+        hideModal={() => {
+          setShowModal(false);
+        }}
+        modalInfo={modalInfo}
+      />
+      {messageList.map((message, index) => (
+        <StyledMessageWrapper
+          key={message.id}
+          onClick={() => onClickMessage(message.nickname, message.contents)}
+        >
+          <StUnLockImage src={unlockList[index]} />
+          <StyledMessageContainer>
+            <StyledTitle>{message.nickname}</StyledTitle>
+            <StyledDescription>{message.contents}</StyledDescription>
+          </StyledMessageContainer>
+        </StyledMessageWrapper>
+      ))}
+    </StyledRoot>
   );
 }
 const StyledRoot = styled.div`
@@ -76,11 +70,6 @@ const StyledRoot = styled.div`
   justify-content: center;
   gap: 8.4rem 2.6rem;
   flex-wrap: wrap;
-`;
-const StyledHeader = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
 `;
 const FlexColumn = styled.div`
   display: flex;
