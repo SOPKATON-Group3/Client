@@ -5,19 +5,25 @@ import wireBackgroundImg, {
   ReactComponent as Wire,
 } from "component/common/assets/images/wire.svg";
 import UnLockContainer from "component/main/unLockContainer";
+import selectKey from "component/common/assets/icon/selectKey.png";
+import { useState } from "react";
 
 function Main() {
+  const [isAbleKey, setIsAbleKey] = useState(true);
+
   return (
-    <StyledRoot url={mainBackground}>
+    <StyledRoot url={mainBackgroundImg} isAbleKey={isAbleKey}>
       <StyledLogoWrapper>
         <Logo />
       </StyledLogoWrapper>
-      <UnLockContainer />
+      <UnLockContainer isAbleKey={isAbleKey} />
       <StyledWireBackground url={wireBackgroundImg} />
-      <StyledButtonWrapper>
-        <button>작성하기</button>
-        <button>보관함</button>
-      </StyledButtonWrapper>
+      {!isAbleKey && (
+        <StyledButtonWrapper>
+          <button>작성하기</button>
+          <button>보관함</button>
+        </StyledButtonWrapper>
+      )}
     </StyledRoot>
   );
 }
@@ -31,6 +37,8 @@ const StyledRoot = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
+  cursor: ${(props) =>
+    props.isAbleKey ? `url(${selectKey}) 45 45, pointer` : "default"};
 `;
 
 const StyledLogoWrapper = styled.div`
@@ -60,5 +68,8 @@ const StyledButtonWrapper = styled.div`
     width: 31.9rem;
     height: 7.2rem;
     border-radius: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
