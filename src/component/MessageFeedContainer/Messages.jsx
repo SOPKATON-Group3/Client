@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { default as UnLock } from "component/common/assets/images/unlock.svg";
 import MessageFeedModal from "./MessageFeedModal";
-import { getMessageList } from "apis/detail.api.js";
+import { getMessageList } from "apis/messageFeed.api.js";
 
 function Messages() {
   const [messageList, setMessageList] = useState([]);
