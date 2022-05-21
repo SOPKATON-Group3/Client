@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { ReactComponent as Background } from "component/common/assets/images/mainBackground.svg";
+import Background from "component/common/assets/images/mainBackground.svg";
 import Messages from "./Messages";
 
 function MessageFeedContainer() {
   return (
     <StyledRoot>
-      <StBackground />
+      <StyledWrapper url={Background} />
       <StyledHeader>누군가 열어본 행복</StyledHeader>
 
       <StyledMainWrapper>
@@ -22,10 +22,12 @@ const StyledRoot = styled.div`
   align-items: center;
 `;
 
-const StBackground = styled(Background)`
+const StyledWrapper = styled.div`
   position: absolute;
   top: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-image: ${(props) => `url(${props.url})`};
   opacity: 0.3;
 `;
 
@@ -37,7 +39,7 @@ const StyledHeader = styled.div`
 `;
 
 const StyledMainWrapper = styled.div`
-  margin-top: 13.2rem;
+  margin: 13.2rem 0;
 `;
 
 export default MessageFeedContainer;

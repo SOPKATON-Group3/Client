@@ -13,7 +13,9 @@ const GlobalStyle = createGlobalStyle`
   *{
     font-family: 'Inter', sans-serif;
   }
-
+  li{
+    list-style:  none;
+  }
 `;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
