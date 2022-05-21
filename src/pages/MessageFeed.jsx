@@ -1,5 +1,6 @@
-function OpenedLetters() {
-  return <div>OpenedLetters</div>;
+import MessageFeedContainer from "component/MessageFeedContainer";
+function MessageFeed() {
+  return <MessageFeedContainer />;
 }
 
-export default OpenedLetters;
+export default MessageFeed;
