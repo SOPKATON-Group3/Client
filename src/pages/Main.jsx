@@ -5,8 +5,14 @@ import wireBackgroundImg, {
   ReactComponent as Wire,
 } from "component/common/assets/images/wire.svg";
 import UnLockContainer from "component/main/unLockContainer";
+import MessageOpenModal from "component/main/MessageOpenModal";
+import selectKey from "component/common/assets/icon/selectKey.png";
+import { useState } from "react";
 
 function Main() {
+  const [showModal, setShowModal] = useState(false);
+  // const [isAbleKey, setIsAbleKey] = useState(false);
+
   return (
     <StyledRoot url={mainBackgroundImg}>
       <StyledLogoWrapper>
@@ -18,6 +24,12 @@ function Main() {
         <button>작성하기</button>
         <button>보관함</button>
       </StyledButtonWrapper>
+      <MessageOpenModal
+        hidden={!showModal}
+        hideModal={() => {
+          setShowModal(false);
+        }}
+      />
     </StyledRoot>
   );
 }
